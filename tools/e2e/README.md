@@ -2,7 +2,7 @@
 
 These tests drive the **real game** on this machine (adapted from BEI's harness):
 - the LeviLauncher instance `1.26.51.01` at `%APPDATA%\levilauncher.exe\versions\1.26.51.01`;
-- **headless input** by default: the test-only mod [LeviHeadlessInput](https://github.com/LiteLDev/LeviHeadlessInput) (clone and build it in
+- **headless input** by default: the test-only mod [LeviHeadlessInput](https://github.com/LiteLDev/BeDD) (clone and build it in
   `%USERPROFILE%\Desktop\LeviHeadlessInput`, see its README; `$env:LEVI_HEADLESS_INPUT_DIR` can point
   at another `bin\LeviHeadlessInput`) is deployed with the mod, and every click, key and text goes
   through its control pipe into the game's own window procedure. The game stays **in the

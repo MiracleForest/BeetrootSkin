@@ -4,8 +4,8 @@
 
 [English](README.md) | 简体中文
 
-[![Release](https://img.shields.io/github/v/release/LiteLDev/BeetrootSkin)](https://github.com/LiteLDev/BeetrootSkin/releases)
-[![License](https://img.shields.io/github/license/LiteLDev/BeetrootSkin)](COPYING.LESSER)
+[![Release](https://img.shields.io/github/v/release/MiracleForest/BeetrootSkin)](https://github.com/MiracleForest/BeetrootSkin/releases)
+[![License](https://img.shields.io/github/license/MiracleForest/BeetrootSkin)](COPYING.LESSER)
 
 吃什么、吃多少，心里有数。BeetrootSkin 把 Java 版的人气模组 [AppleSkin](https://github.com/squeek502/AppleSkin) 带到了基岩版：物品提示里直接写着食物的饥饿值和饱和度，手里拿着食物就能预览吃下去的效果，平时看不见的饱和度和消耗度也会显示在 HUD 上。
 
@@ -33,7 +33,7 @@
 lip install github.com/LiteLDev/BeetrootSkin#client
 ```
 
-也可以从[最新发布](https://github.com/LiteLDev/BeetrootSkin/releases/latest)下载 `beetrootskin-client-windows-x64.zip`，解压后让 `BeetrootSkin/` 位于游戏的 `mods/` 文件夹中。
+也可以从[最新发布](https://github.com/MiracleForest/BeetrootSkin/releases/latest)下载 `beetrootskin-client-windows-x64.zip`，解压后让 `BeetrootSkin/` 位于游戏的 `mods/` 文件夹中。
 
 ## 使用方法
 
