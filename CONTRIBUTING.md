@@ -4,7 +4,7 @@ Thanks for helping! Bug reports, ideas and pull requests are all welcome.
 
 ## Reporting bugs and requesting features
 
-Use the [issue templates](https://github.com/LiteLDev/BeetrootSkin/issues/new/choose). For bugs, include:
+Use the [issue templates](https://github.com/MiracleForest/BeetrootSkin/issues/new/choose). For bugs, include:
 
 - the BeetrootSkin version;
 - the LeviLamina version;

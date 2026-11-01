@@ -4,8 +4,8 @@
 
 English | [简体中文](README.zh-CN.md)
 
-[![Release](https://img.shields.io/github/v/release/LiteLDev/BeetrootSkin)](https://github.com/LiteLDev/BeetrootSkin/releases)
-[![License](https://img.shields.io/github/license/LiteLDev/BeetrootSkin)](COPYING.LESSER)
+[![Release](https://img.shields.io/github/v/release/MiracleForest/BeetrootSkin)](https://github.com/MiracleForest/BeetrootSkin/releases)
+[![License](https://img.shields.io/github/license/MiracleForest/BeetrootSkin)](COPYING.LESSER)
 
 Know exactly what your food is worth. BeetrootSkin brings [AppleSkin](https://github.com/squeek502/AppleSkin), the much-loved Java Edition mod, to Minecraft Bedrock: food values in tooltips, a preview of what eating will restore, and the hidden saturation and exhaustion made visible on your HUD.
 
@@ -33,7 +33,7 @@ With [lip](https://github.com/LiteLDev/lip):
 lip install github.com/LiteLDev/BeetrootSkin#client
 ```
 
-Or download `beetrootskin-client-windows-x64.zip` from the [latest release](https://github.com/LiteLDev/BeetrootSkin/releases/latest) and unzip it so that `BeetrootSkin/` lands in the game's `mods/` folder.
+Or download `beetrootskin-client-windows-x64.zip` from the [latest release](https://github.com/MiracleForest/BeetrootSkin/releases/latest) and unzip it so that `BeetrootSkin/` lands in the game's `mods/` folder.
 
 ## How to use
 

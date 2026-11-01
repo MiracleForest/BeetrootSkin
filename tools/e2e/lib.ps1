@@ -26,7 +26,7 @@ $script:KeepMods         = @('LeviLamina', $script:ModName, 'LeviHeadlessInput')
 # and remove them with Remove-ExtraMod in their restore script; Disable-OtherMods deletes a
 # leftover of an interrupted run instead of parking it in mods-disabled\.
 $script:TestOnlyMods     = @('beetroot-api-sample')
-# LeviHeadlessInput (https://github.com/LiteLDev/LeviHeadlessInput, cloned and built in
+# LeviHeadlessInput (https://github.com/LiteLDev/BeDD, cloned and built in
 # %USERPROFILE%\Desktop\LeviHeadlessInput by default): a test-only client mod
 # that lets run.ps1 drive the game through a control pipe instead of the real mouse and keyboard.
 # Its build output (DLL, HeadlessInput.psm1, harness-shim.ps1) is taken from here.
