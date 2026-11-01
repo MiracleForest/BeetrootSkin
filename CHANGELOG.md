@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-01
+
 ### Changed
 
 - The repository moved to [MiracleForest/BeetrootSkin](https://github.com/MiracleForest/BeetrootSkin); links point there now.
@@ -53,6 +55,7 @@ First release.
   - headers and import library in `beetrootskin-sdk-client-windows-x64.zip`.
 - **Translations**: English and Simplified Chinese.
 
-[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MiracleForest/BeetrootSkin/releases/tag/v0.1.0
