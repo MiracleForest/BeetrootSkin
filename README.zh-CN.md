@@ -30,7 +30,7 @@
 用 [lip](https://github.com/LiteLDev/lip) 安装：
 
 ```sh
-lip install github.com/LiteLDev/BeetrootSkin#client
+lip install github.com/MiracleForest/BeetrootSkin#client
 ```
 
 也可以从[最新发布](https://github.com/MiracleForest/BeetrootSkin/releases/latest)下载 `beetrootskin-client-windows-x64.zip`，解压后让 `BeetrootSkin/` 位于游戏的 `mods/` 文件夹中。
@@ -67,7 +67,7 @@ lip install github.com/LiteLDev/BeetrootSkin#client
 
 ## 更多
 
-更多截图和视频：https://levimc.org/mods/github.com/LiteLDev/BeetrootSkin/?tab=gallery
+更多截图和视频：https://levimc.org/mods/github.com/MiracleForest/BeetrootSkin/?tab=gallery
 
 想自己构建，或者基于它开发模组？请看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
