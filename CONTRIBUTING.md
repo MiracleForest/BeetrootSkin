@@ -54,7 +54,7 @@ The mod version comes from `git describe`, so build from a git clone with at lea
 
 ### Showcase media
 
-The screenshots and videos in [docs/showcase](docs/showcase/) (the README and the [LeviMC Mods gallery](https://levimc.org/mods/github.com/LiteLDev/BeetrootSkin/?tab=gallery), listed in `docs/showcase/showcase.json`) come from the end-to-end `showcase` scenario:
+The screenshots and videos in [docs/showcase](docs/showcase/) (the README and the [LeviMC Mods gallery](https://levimc.org/mods/github.com/MiracleForest/BeetrootSkin/?tab=gallery), listed in `docs/showcase/showcase.json`) come from the end-to-end `showcase` scenario:
 
 ```powershell
 pwsh -NoProfile -File tools/e2e/run.ps1 -Scenario showcase

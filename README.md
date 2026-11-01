@@ -30,7 +30,7 @@ You need Minecraft Bedrock Edition **1.26.51** for Windows (x64) with LeviLamina
 With [lip](https://github.com/LiteLDev/lip):
 
 ```sh
-lip install github.com/LiteLDev/BeetrootSkin#client
+lip install github.com/MiracleForest/BeetrootSkin#client
 ```
 
 Or download `beetrootskin-client-windows-x64.zip` from the [latest release](https://github.com/MiracleForest/BeetrootSkin/releases/latest) and unzip it so that `BeetrootSkin/` lands in the game's `mods/` folder.
@@ -67,7 +67,7 @@ Bedrock heals differently from Java (a steady regeneration while hunger is 18 or
 
 ## More
 
-More screenshots and videos: https://levimc.org/mods/github.com/LiteLDev/BeetrootSkin/?tab=gallery
+More screenshots and videos: https://levimc.org/mods/github.com/MiracleForest/BeetrootSkin/?tab=gallery
 
 Building it yourself or writing a mod against it? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
