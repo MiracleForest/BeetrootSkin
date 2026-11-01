@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The repository moved to [MiracleForest/BeetrootSkin](https://github.com/MiracleForest/BeetrootSkin); links point there now.
-- The lip package is now `github.com/MiracleForest/BeetrootSkin`: install with `lip install github.com/MiracleForest/BeetrootSkin#client` (needs lip 0.35.0 or later). Existing installs: run `lip update` with a lip that supports renamed packages, or `lip uninstall github.com/LiteLDev/BeetrootSkin#client` and then `lip install github.com/MiracleForest/BeetrootSkin#client`; `mods/BeetrootSkin/config/` is kept. Older versions remain installable at their old path, `github.com/LiteLDev/BeetrootSkin`.
+- The lip package is now `github.com/MiracleForest/BeetrootSkin`: install with `lip install github.com/MiracleForest/BeetrootSkin#client`. To move an existing install over, run `lip uninstall github.com/LiteLDev/BeetrootSkin#client` and then `lip install github.com/MiracleForest/BeetrootSkin#client`; `mods/BeetrootSkin/config/` is kept. Versions 0.1.1 and older still name the old path, `github.com/LiteLDev/BeetrootSkin`, and install from it (by the new path they need lip 0.35.0 or later).
 
 ## [0.1.1] - 2026-10-24
 
