@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0-beta.1] - 2026-11-11
+
+First beta of 0.2.0. Please report anything that behaves differently from 0.1.2.
+
+### Added
+
+- Support for **Minecraft 1.26.60** with LeviLamina 26.60.x, which is now the version BeetrootSkin is installed as by default. Minecraft 1.26.51 with LeviLamina 26.51.x is still supported and gets its own build of every release, so nothing is lost by updating.
+  - BeetrootSkin is compiled against one LeviLamina line at a time, so each release now ships one download per line: `beetrootskin-client-win-x64-ll26.60.zip` and `beetrootskin-client-win-x64-ll26.51.zip`, and the API SDK as `beetrootskin-sdk-client-win-x64-ll26.60.zip` and `beetrootskin-sdk-client-win-x64-ll26.51.zip`.
+
+### Changed
+
+- The package is now described by `lip.toml` of format 4 instead of `tooth.json`, so installing it needs a LeviLauncher that reads it. The command-line [lip](https://github.com/LiteLDev/lip) 0.40.0 and later manages server installations only and cannot install this client-only mod. Older releases stay installable with older lip.
+- Each supported LeviLamina line is a variant named after it: `26_60` for 26.60.x and `26_51` for 26.51.x. The default variant, and `client` — the variant earlier releases were installed as — are the newest line, so LeviLauncher keeps updating existing installs and simply moves you to 26.60.
+  - To stay on Minecraft 1.26.51, pick the `26_51` variant (`github.com/MiracleForest/BeetrootSkin#26_51`) on the mod's page in LeviLauncher.
+  - Your settings in `mods/BeetrootSkin/config/` are kept either way.
+- The downloads are now lip mod archives: the files sit at the root of the ZIP instead of inside a `BeetrootSkin/` folder. Extract one into `mods/BeetrootSkin/`, not into `mods/`.
+
 ## [0.1.2] - 2026-11-01
 
 ### Changed
@@ -55,7 +72,8 @@ First release.
   - headers and import library in `beetrootskin-sdk-client-windows-x64.zip`.
 - **Translations**: English and Simplified Chinese.
 
-[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.2.0-beta.1...HEAD
+[0.2.0-beta.1]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.2...v0.2.0-beta.1
 [0.1.2]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MiracleForest/BeetrootSkin/releases/tag/v0.1.0

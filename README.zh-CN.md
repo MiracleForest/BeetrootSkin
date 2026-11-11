@@ -25,15 +25,18 @@
 
 ## 安装
 
-需要 Windows (x64) 版 Minecraft 基岩版 **1.26.51** 和 LeviLamina **26.51.x**（例如用 [LeviLauncher](https://github.com/LiteLDev/LeviLauncher) 安装）。
+需要 Windows (x64) 版 Minecraft 基岩版和 LeviLamina（例如用 [LeviLauncher](https://github.com/LiteLDev/LeviLauncher) 安装）。BeetrootSkin 的每个版本都会针对它支持的每条 LeviLamina 版本线分别构建，请选择与你的游戏匹配的那一个：
 
-用 [lip](https://github.com/LiteLDev/lip) 安装：
+| Minecraft | LeviLamina | 变体 | 下载 |
+| --- | --- | --- | --- |
+| 1.26.60 | 26.60.x | `26_60`，也是默认变体 | `beetrootskin-client-win-x64-ll26.60.zip` |
+| 1.26.51 | 26.51.x | `26_51` | `beetrootskin-client-win-x64-ll26.51.zip` |
 
-```sh
-lip install github.com/MiracleForest/BeetrootSkin#client
-```
+在 LeviLauncher 中，从 **LeviMC Mods** 页面安装 BeetrootSkin；页面上可以选择以上变体，默认是最新的版本线。
 
-也可以从[最新发布](https://github.com/MiracleForest/BeetrootSkin/releases/latest)下载 `beetrootskin-client-windows-x64.zip`，解压后让 `BeetrootSkin/` 位于游戏的 `mods/` 文件夹中。
+命令行版 [lip](https://github.com/LiteLDev/lip)（0.40.0 及更新版本）只管理服务端，而 BeetrootSkin 只用于客户端，所以无法用它安装，请改用 LeviLauncher。
+
+也可以从[最新发布](https://github.com/MiracleForest/BeetrootSkin/releases/latest)下载与你的版本线对应的 ZIP，解压到游戏 `mods/` 文件夹下的 `BeetrootSkin` 文件夹中，使 `mods/BeetrootSkin/manifest.json` 存在。
 
 ## 使用方法
 

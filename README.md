@@ -25,15 +25,18 @@ Works in single-player, in LAN worlds and on servers. Only you need it: nothing 
 
 ## Install
 
-You need Minecraft Bedrock Edition **1.26.51** for Windows (x64) with LeviLamina **26.51.x**, for example set up with [LeviLauncher](https://github.com/LiteLDev/LeviLauncher).
+You need Minecraft Bedrock Edition for Windows (x64) with LeviLamina, for example set up with [LeviLauncher](https://github.com/LiteLDev/LeviLauncher). A BeetrootSkin release is built against each LeviLamina line it supports, and you pick the one that matches your game:
 
-With [lip](https://github.com/LiteLDev/lip):
+| Minecraft | LeviLamina | Variant | Download |
+| --- | --- | --- | --- |
+| 1.26.60 | 26.60.x | `26_60`, and the default | `beetrootskin-client-win-x64-ll26.60.zip` |
+| 1.26.51 | 26.51.x | `26_51` | `beetrootskin-client-win-x64-ll26.51.zip` |
 
-```sh
-lip install github.com/MiracleForest/BeetrootSkin#client
-```
+In LeviLauncher, install BeetrootSkin from the **LeviMC Mods** page; it offers the variants above, and the default is the newest line.
 
-Or download `beetrootskin-client-windows-x64.zip` from the [latest release](https://github.com/MiracleForest/BeetrootSkin/releases/latest) and unzip it so that `BeetrootSkin/` lands in the game's `mods/` folder.
+The command-line [lip](https://github.com/LiteLDev/lip) (0.40.0 and later) manages server installations only, so it cannot install BeetrootSkin, which is client-only; use LeviLauncher instead.
+
+Or download the ZIP for your line from the [latest release](https://github.com/MiracleForest/BeetrootSkin/releases/latest) and unzip it into a `BeetrootSkin` folder inside the game's `mods/` folder, so that `mods/BeetrootSkin/manifest.json` exists.
 
 ## How to use
 
