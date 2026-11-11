@@ -11,9 +11,13 @@ logo = "https://raw.githubusercontent.com/MiracleForest/BeetrootSkin/main/docs/l
 # BeetrootSkin is compiled against one LeviLamina line at a time, so every supported line is a
 # variant named after it: 26_51 for LeviLamina 26.51.x (Minecraft 1.26.51), 26_60 for 26.60.x
 # (Minecraft 1.26.60). Variant names may only hold [a-z0-9_], hence 26_60 and not 26.60.
+# BeetrootSkin is a client-only mod, so every variant has only a client entry (LeviLauncher).
 #
-# The default variant and the variant "client", which is the one LeviLauncher reaches for first
-# and the one earlier releases of BeetrootSkin were installed as, are the newest supported line.
+# The default variant is the newest supported line. There is no "client" variant: the client
+# entry of each variant is what a client install gets.
+#
+# LeviLamina's releases are still tooth.json packages, whose client build is their "client"
+# variant, so the client entries depend on github.com/LiteLDev/LeviLamina#client.
 
 # --- 26.60 (Minecraft 1.26.60) ------------------------------------------------------------------
 
@@ -26,18 +30,6 @@ preserve = ["mods/BeetrootSkin/config/"]
 "github.com/LiteLDev/LeviLamina#client" = "26.60.*"
 
 [[variants."".assets]]
-type = "mcmod"
-urls = ["https://{{id}}/releases/download/v{{version}}/beetrootskin-client-win-x64-ll26.60.zip"]
-
-[[variants.client]]
-side = "client"
-platform = "win-x64"
-preserve = ["mods/BeetrootSkin/config/"]
-
-[variants.client.deps]
-"github.com/LiteLDev/LeviLamina#client" = "26.60.*"
-
-[[variants.client.assets]]
 type = "mcmod"
 urls = ["https://{{id}}/releases/download/v{{version}}/beetrootskin-client-win-x64-ll26.60.zip"]
 
