@@ -18,9 +18,9 @@ First beta of 0.2.0. Please report anything that behaves differently from 0.1.2.
 
 ### Changed
 
-- The package is now described by `lip.toml` of format 4 instead of `tooth.json`, so installing it needs [lip](https://github.com/LiteLDev/lip) **0.40.0** or later, or a LeviLauncher that reads it. Older releases stay installable with older lip.
-- Each supported LeviLamina line is a variant named after it: `26_60` for 26.60.x and `26_51` for 26.51.x. The default variant, and `client` — the variant earlier releases were installed as — are the newest line, so `lip update` and LeviLauncher keep working and simply move you to 26.60.
-  - To stay on Minecraft 1.26.51, install `github.com/MiracleForest/BeetrootSkin#26_51`, or pick the `26_51` variant on the mod's page in LeviLauncher.
+- The package is now described by `lip.toml` of format 4 instead of `tooth.json`, so installing it needs a LeviLauncher that reads it. The command-line [lip](https://github.com/LiteLDev/lip) 0.40.0 and later manages server installations only and cannot install this client-only mod. Older releases stay installable with older lip.
+- Each supported LeviLamina line is a variant named after it: `26_60` for 26.60.x and `26_51` for 26.51.x. The default variant, and `client` — the variant earlier releases were installed as — are the newest line, so LeviLauncher keeps updating existing installs and simply moves you to 26.60.
+  - To stay on Minecraft 1.26.51, pick the `26_51` variant (`github.com/MiracleForest/BeetrootSkin#26_51`) on the mod's page in LeviLauncher.
   - Your settings in `mods/BeetrootSkin/config/` are kept either way.
 - The downloads are now lip mod archives: the files sit at the root of the ZIP instead of inside a `BeetrootSkin/` folder. Extract one into `mods/BeetrootSkin/`, not into `mods/`.
 

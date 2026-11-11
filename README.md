@@ -34,11 +34,7 @@ You need Minecraft Bedrock Edition for Windows (x64) with LeviLamina, for exampl
 
 In LeviLauncher, install BeetrootSkin from the **LeviMC Mods** page; it offers the variants above, and the default is the newest line.
 
-With [lip](https://github.com/LiteLDev/lip) 0.40.0 or later:
-
-```sh
-lip install github.com/MiracleForest/BeetrootSkin#26_60
-```
+The command-line [lip](https://github.com/LiteLDev/lip) (0.40.0 and later) manages server installations only, so it cannot install BeetrootSkin, which is client-only; use LeviLauncher instead.
 
 Or download the ZIP for your line from the [latest release](https://github.com/MiracleForest/BeetrootSkin/releases/latest) and unzip it into a `BeetrootSkin` folder inside the game's `mods/` folder, so that `mods/BeetrootSkin/manifest.json` exists.
 

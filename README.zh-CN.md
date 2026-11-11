@@ -34,11 +34,7 @@
 
 在 LeviLauncher 中，从 **LeviMC Mods** 页面安装 BeetrootSkin；页面上可以选择以上变体，默认是最新的版本线。
 
-用 [lip](https://github.com/LiteLDev/lip) 0.40.0 或更新版本安装：
-
-```sh
-lip install github.com/MiracleForest/BeetrootSkin#26_60
-```
+命令行版 [lip](https://github.com/LiteLDev/lip)（0.40.0 及更新版本）只管理服务端，而 BeetrootSkin 只用于客户端，所以无法用它安装，请改用 LeviLauncher。
 
 也可以从[最新发布](https://github.com/MiracleForest/BeetrootSkin/releases/latest)下载与你的版本线对应的 ZIP，解压到游戏 `mods/` 文件夹下的 `BeetrootSkin` 文件夹中，使 `mods/BeetrootSkin/manifest.json` 存在。
 
