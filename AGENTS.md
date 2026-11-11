@@ -1,9 +1,17 @@
 # AGENTS.md
 
 BeetrootSkin is a port of [AppleSkin](https://github.com/squeek502/AppleSkin) (Java Edition food and
-hunger HUD/tooltip info) to Minecraft Bedrock, built as a **client** mod on LeviLamina. It targets MC
-**1.26.51.01** and LeviLamina **26.51.7**, and is built with xmake and clang-cl on Windows x64.
+hunger HUD/tooltip info) to Minecraft Bedrock, built as a **client** mod on LeviLamina, with xmake and
+clang-cl on Windows x64.
 The project layout, rules and harness come from the sibling project BEI (same author, LGPL-3.0-or-later).
+
+One source tree supports several LeviLamina lines, one build each. A line is a lip variant of the
+same name, and `--levilamina` picks the one being built:
+
+| Line | Minecraft | Variant | Built against | Lock file |
+| --- | --- | --- | --- | --- |
+| 26.60.x | 1.26.60 | `26_60`, and the default | `--levilamina=26.60.6` (the default) | `locks/26_60.lock` |
+| 26.51.x | 1.26.51 | `26_51` | `--levilamina=26.51.7` | `locks/26_51.lock` |
 
 ## Layout and ownership
 
@@ -156,7 +164,8 @@ all; in a fresh pwsh:
 `$env:Path="C:\Program Files\LLVM\bin;"+[Environment]::GetEnvironmentVariable('Path','Machine')+';'+[Environment]::GetEnvironmentVariable('Path','User')`
 
 ```powershell
-xmake f -a x64 -m release -p windows --target_type=client -y   # once (config is sticky)
+Copy-Item locks/26_60.lock xmake-requires.lock                  # the line you are building
+xmake f -a x64 -m release -p windows --target_type=client --levilamina=26.60.6 -y  # config is sticky
 xmake -y                                                         # bin/BeetrootSkin/{BeetrootSkin.dll,manifest.json,lang/,textures/}
 xmake build -y beetroot-tests; xmake run beetroot-tests          # unit tests (src/core only)
 xmake f --api_sample=y -y; xmake -y                              # + bin/beetroot-api-sample (e2e `api` only)
@@ -164,15 +173,33 @@ pwsh -NoProfile -File tools/e2e/run.ps1 -Scenario smoke          # real game, se
 ```
 
 `git config --global core.longpaths true` is required (the LeviLamina package has very long header
-paths). The levibuildscript mod packer reads the version from `git describe`, so the repository
-needs at least one commit to build.
+paths).
+
+`xmake-requires.lock` is generated, not tracked: copy the lock of the line you are building over it
+before configuring. Switching lines means another `Copy-Item` and another `xmake f`.
 
 ## Bedrock / LeviLamina rules (learned the hard way)
 
 **Where the SDK headers are**
-- `%LOCALAPPDATA%\.xmake\packages\l\levilamina\26.51.7\<hash>\include\{ll,mc}`; LeviLamina's own
-  sources: `%LOCALAPPDATA%\lip\cache\git+https...LeviLamina.git#v26.51.7\{src,src-client}`.
-- Check these before guessing any name or signature.
+- `%LOCALAPPDATA%\.xmake\packages\l\levilamina\<version>\<hash>\include\{ll,mc}`, one tree per
+  version you have built against; LeviLamina's own sources:
+  `%LOCALAPPDATA%\lip\cache\git+https...LeviLamina.git#v<version>\{src,src-client}`.
+- Check these before guessing any name or signature, and diff the trees of two lines before
+  assuming an API is the same on both.
+
+**Supporting more than one line**
+- The build defines `BEETROOTSKIN_LL_VERSION` as the line it is building for: `2651`, `2660`. Guard
+  a difference with it, keep the guard as small as possible, and never drop the older path:
+  ```cpp
+  #if BEETROOTSKIN_LL_VERSION >= 2660
+  ...
+  #else
+  ...
+  #endif
+  ```
+- Prefer one unguarded path when the same API works on both lines; a guard is the last resort.
+- A warning `'X' is deprecated: This API is not available` means `X` became `MCNAPI` on that line.
+  It still links, but it is not there to call: find another way instead of silencing the warning.
 
 **What you may call**
 - `MCAPI`, `MCFOLD` and `MCTAPI` functions and unmarked `virtual` functions are callable.

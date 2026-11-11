@@ -1,7 +1,7 @@
 # BeetrootSkin end-to-end tests
 
 These tests drive the **real game** on this machine (adapted from BEI's harness):
-- the LeviLauncher instance `1.26.51.01` at `%APPDATA%\levilauncher.exe\versions\1.26.51.01`;
+- the LeviLauncher instance `1.26.51.01` at `%APPDATA%\levilauncher.exe\versions\1.26.51.01`, or the one named by `$env:BEETROOT_E2E_VERSION` - run the scenarios once per LeviLamina line, against that line's build of BeetrootSkin;
 - **headless input** by default: the test-only mod [LeviHeadlessInput](https://github.com/LiteLDev/BeDD) (clone and build it in
   `%USERPROFILE%\Desktop\LeviHeadlessInput`, see its README; `$env:LEVI_HEADLESS_INPUT_DIR` can point
   at another `bin\LeviHeadlessInput`) is deployed with the mod, and every click, key and text goes

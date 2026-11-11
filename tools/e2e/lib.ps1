@@ -10,7 +10,9 @@
 $script:RepoRoot     = (Resolve-Path "$PSScriptRoot/../..").Path
 $script:Launcher     = Join-Path $env:USERPROFILE 'Desktop\LeviLauncher.exe'
 $script:LauncherData = Join-Path $env:APPDATA 'levilauncher.exe'
-$script:BaseVersion  = '1.26.51.01'
+# The LeviLauncher instance to test in. Set BEETROOT_E2E_VERSION to the folder name of another one,
+# e.g. a 1.26.60 instance, to run the scenarios against that line's build of BeetrootSkin.
+$script:BaseVersion  = if ($env:BEETROOT_E2E_VERSION) { $env:BEETROOT_E2E_VERSION } else { '1.26.51.01' }
 $script:OutDir       = Join-Path $script:RepoRoot 'tools\e2e\out'
 $script:ModName      = 'BeetrootSkin'
 $script:WorldName    = 'BeetrootSkin-Test'
