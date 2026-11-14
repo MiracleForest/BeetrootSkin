@@ -76,4 +76,4 @@
 
 ## 许可证
 
-[LGPL-3.0-or-later](COPYING.LESSER) © LeviMC。HUD 和提示框图标来自 squeek502 的 AppleSkin，以 Unlicense 发布（见 [NOTICE](assets/textures/NOTICE)）。本项目与 Mojang Studios、Microsoft 及 AppleSkin 项目均无关联。
+[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest。HUD 和提示框图标来自 squeek502 的 AppleSkin，以 Unlicense 发布（见 [NOTICE](assets/textures/NOTICE)）。本项目与 Mojang Studios、Microsoft 及 AppleSkin 项目均无关联。

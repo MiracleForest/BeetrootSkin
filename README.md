@@ -76,4 +76,4 @@ Building it yourself or writing a mod against it? See [CONTRIBUTING.md](CONTRIBU
 
 ## License
 
-[LGPL-3.0-or-later](COPYING.LESSER) © LeviMC. The HUD and tooltip icons are AppleSkin's, by squeek502, released under the Unlicense ([NOTICE](assets/textures/NOTICE)). Not affiliated with Mojang Studios, Microsoft or the AppleSkin project.
+[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest. The HUD and tooltip icons are AppleSkin's, by squeek502, released under the Unlicense ([NOTICE](assets/textures/NOTICE)). Not affiliated with Mojang Studios, Microsoft or the AppleSkin project.
