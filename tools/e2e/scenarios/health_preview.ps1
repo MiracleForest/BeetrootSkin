@@ -1,4 +1,4 @@
-# Health-restored HUD preview (AppleSkin HealthRestored overlay).
+# Health-restored HUD preview (HealthRestored overlay).
 # Survival, normal difficulty, hunger ~11 (below 18), health 8:
 #   cooked_beef  -> 11 + 8 >= 18, natural regen after eating: flashing hearts from 8 up
 #   golden_apple -> 11 + 4 < 18, but Regeneration II 5 s heals 4 HP: two flashing hearts

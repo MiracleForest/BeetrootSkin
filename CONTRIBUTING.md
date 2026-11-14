@@ -13,7 +13,7 @@ Use the [issue templates](https://github.com/MiracleForest/BeetrootSkin/issues/n
 - steps to reproduce;
 - the relevant part of `logs/latest.log` from your game folder.
 
-If a number looks wrong, compare it with what [AppleSkin](https://github.com/squeek502/AppleSkin) shows for the same food on Java Edition, and keep in mind the Bedrock differences listed under [How it works](#how-it-works).
+If a number looks wrong, check it against the game's own food values, and keep in mind the Bedrock rules listed under [How it works](#how-it-works).
 
 ## Development setup
 
@@ -97,17 +97,17 @@ It writes raw captures to `tools/e2e/out/showcase/`; the scenario's header says 
 
 ### How it works
 
-- **Regeneration.** Bedrock heals at a fixed rate while hunger is at least 18 and has no Java-style saturation-boosted fast regeneration. The health preview uses Bedrock's rules, so it can differ from what AppleSkin shows for the same food on Java. Saturation gained is `nutrition × saturation modifier × 2`, as in Bedrock.
+- **Regeneration.** Bedrock heals at a fixed rate while hunger is at least 18 and has no Java-style saturation-boosted fast regeneration. The health preview uses Bedrock's rules, so it can differ from Java Edition for the same food on Java. Saturation gained is `nutrition × saturation modifier × 2`, as in Bedrock.
 - **Where the values come from.** In single-player and when you host a LAN world, the values come straight from the integrated server and are exact. On dedicated servers and joined worlds, BeetrootSkin uses the hunger, saturation and exhaustion attributes the server sends to the client, which can lag slightly behind the server's own values.
 - **Config file handling.** `config.json` is polled about once a second (the log shows `Config reloaded: ...` with the changed options). If it is not valid JSON, the current settings are kept, a warning is logged and the file is left as is. Missing keys get their defaults, and unknown keys are kept when the file is saved. When the mod saves the file itself (for example after `F6`) while it holds content the mod could not read, that content is first copied to `config.json.bak`. `version` is managed by the mod.
 
 ### API for other mods
 
-Other LeviLamina mods can integrate with BeetrootSkin through a C++ port of [AppleSkin's API](https://github.com/squeek502/AppleSkin/tree/1.21.11-neoforge/java/squeek/appleskin/api). The events are LeviLamina events on `ll::event::EventBus`, posted on the client thread:
+Other LeviLamina mods can integrate with BeetrootSkin through its C++ API (`include/beetrootskin/api/`). The events are LeviLamina events on `ll::event::EventBus`, posted on the client thread:
 
 | Event | When | Cancel to |
 | --- | --- | --- |
-| `beetroot::api::FoodValuesEvent` | BeetrootSkin determines the food values of an item (tooltips and the held food behind every HUD preview). Change `modifiedFoodValues()` (or `defaultFoodValues()`): every display uses the modified values, and tooltips show default vs modified with AppleSkin's outlines. | (not cancellable) |
+| `beetroot::api::FoodValuesEvent` | BeetrootSkin determines the food values of an item (tooltips and the held food behind every HUD preview). Change `modifiedFoodValues()` (or `defaultFoodValues()`): every display uses the modified values, and tooltips show default vs modified with outlines. | (not cancellable) |
 | `beetroot::api::TooltipOverlayEvent::Pre` | Food values are about to be added to a tooltip. | show no food values for this item |
 | `beetroot::api::TooltipOverlayEvent::Render` | They are about to be drawn (`x()`/`y()` movable, `renderContext()` to draw your own). | keep the space, draw nothing |
 | `beetroot::api::HUDOverlayEvent::Exhaustion` | The exhaustion underlay is drawn (`exhaustion()`). | hide the underlay |

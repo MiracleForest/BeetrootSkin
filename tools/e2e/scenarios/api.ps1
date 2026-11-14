@@ -3,7 +3,7 @@
 # - doubles the nutrition of minecraft:bread (FoodValuesEvent),
 # - cancels HUDOverlayEvent::Exhaustion (no exhaustion underlay),
 # - cancels TooltipOverlayEvent::Pre for minecraft:apple (no food values in its tooltip).
-# Checks: bread tooltip shows default 5 vs modified 10 (AppleSkin's outlines), apple tooltip has
+# Checks: bread tooltip shows default 5 vs modified 10 (outlined), apple tooltip has
 # no food rows, cooked beef is unaffected; the HUD hunger/saturation/health previews use the
 # modified bread values, beef's stay vanilla, and the underlay is never drawn.
 # Screenshots: out/api/*.png (+ *-zoom.png crops of the HUD bars, 3x).

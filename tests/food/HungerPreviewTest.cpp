@@ -20,7 +20,7 @@ TEST(HungerPreview, ShownOnlyWhenEnabledEdibleAndSurvival) {
     // Full hunger: only always-edible food.
     EXPECT_FALSE(shouldShowHungerPreview(true, withHunger(20), beef));
     EXPECT_TRUE(shouldShowHungerPreview(true, withHunger(20), apple));
-    // Creative / spectator: never (AppleSkin: !canHurtPlayer).
+    // Creative / spectator: never (!canHurtPlayer).
     auto creative         = withHunger(8);
     creative.creativeLike = true;
     EXPECT_FALSE(shouldShowHungerPreview(true, creative, beef));
@@ -40,7 +40,7 @@ TEST(HungerPreview, PeacefulFullBarIsEdibleButGainsNoShanks) {
     EXPECT_FALSE(shouldShowHungerPreview(true, peaceful, beef));
 }
 
-TEST(HungerPreview, IconListMatchesAppleSkinRange) {
+TEST(HungerPreview, IconListMatchesEatenRange) {
     // hunger 7 + 8 = 15: icons 3..7, the last one (index 7, hunger 15) is half.
     auto icons = hungerPreviewIconList(7, FoodValues::make(8, 0.8f));
     ASSERT_EQ(icons.size(), 5u);
@@ -64,7 +64,7 @@ TEST(HungerPreview, IconListClampsAtTwenty) {
     auto icons = hungerPreviewIconList(19, FoodValues::make(4, 1.2f, true));
     ASSERT_EQ(icons.size(), 1u);
     EXPECT_EQ(icons[0], (HungerPreviewIcon{9, ShankSprite::Full, false}));
-    // Already full: the range is 20/2 = 10 .. ceil(20/2) = 10, so nothing is drawn (AppleSkin
+    // Already full: the range is 20/2 = 10 .. ceil(20/2) = 10, so nothing is drawn (
     // shows only the saturation gain of an always-edible food then).
     EXPECT_TRUE(hungerPreviewIconList(20, FoodValues::make(4, 1.2f, true)).empty());
 }

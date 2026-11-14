@@ -1,4 +1,4 @@
-# Food debug info (AppleSkin's F3 line) and its F6 toggle hotkey.
+# Food debug info (the F3-style line) and its F6 toggle hotkey.
 # Screenshots: out/debug_info/
 #   on.png           right after F6: the line and the "BeetrootSkin debug info: on" action bar text
 #   exhaustion.png   after sprinting/jumping: exh value grew

@@ -1,4 +1,4 @@
-// Live config reload, like AppleSkin's (whose config screen applies changes immediately):
+// Live config reload (changes apply immediately):
 // config.json may be edited at any time while the game runs. The poll runs on the client thread
 // after every UI render (main menu, pause screens and in-world alike; level ticks stop while the
 // game is paused). app::pollConfigFile() only compares time points per call and stats the file

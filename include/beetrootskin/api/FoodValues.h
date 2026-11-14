@@ -1,6 +1,6 @@
 #pragma once
 
-// BeetrootSkin public API: food values (AppleSkin's FoodProperties as seen by its API).
+// BeetrootSkin public API: food values (an item's food properties as seen by the API).
 //
 // Everything under beetrootskin/api is usable from other LeviLamina mods: include the headers
 // from bin/BeetrootSkin-sdk/include, link bin/BeetrootSkin-sdk/lib/BeetrootSkin.lib and declare

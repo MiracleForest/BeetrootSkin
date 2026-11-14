@@ -1,6 +1,6 @@
-// Food-state accuracy and "sync" diagnostics (AppleSkin's SyncHandler equivalent).
+// Food-state accuracy and "sync" diagnostics.
 //
-// AppleSkin needs a packet to get saturation, exhaustion and the naturalRegeneration game rule
+// Java Edition needs a mod packet to get saturation, exhaustion and the naturalRegeneration game rule
 // to Java clients. BeetrootSkin is client-only, so instead this module watches what the server
 // already sends and makes sure game::readFoodState() is right in every situation:
 //

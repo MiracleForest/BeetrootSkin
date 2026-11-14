@@ -12,7 +12,7 @@ bool healthPreviewAllowed(FoodState const& s) noexcept {
     if (s.hasPoison || s.hasWither || s.hasRegeneration) return false;
     if (!std::isfinite(s.health) || !std::isfinite(s.maxHealth) || !(s.maxHealth > 0)) return false;
     if (!(s.health > 0)) return false; // dead (the HUD can still be drawn behind the death screen)
-    // AppleSkin: ceil(maxHealth / 2) hearts outside [0, 1000] disables the overlay.
+    // ceil(maxHealth / 2) hearts outside [0, 1000] disables the overlay.
     if (std::ceil(s.maxHealth / 2.f) > static_cast<float>(MAX_HEALTH_PREVIEW_HEARTS)) return false;
     return true;
 }

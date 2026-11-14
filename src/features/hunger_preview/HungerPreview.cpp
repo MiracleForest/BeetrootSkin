@@ -1,4 +1,4 @@
-// AppleSkin HUDOverlayHandler "HungerRestored": while the player holds food they can eat, the
+// "HungerRestored" preview: while the player holds food they can eat, the
 // shanks the food would fill flash on the hunger bar (empty shank at alpha/4, then the full or
 // half shank at alpha; rotten food uses the green "hunger effect" sprites).
 #include "core/food/HungerPreview.h"
@@ -63,7 +63,7 @@ public:
             return;
         }
         auto const& food = ctx.held->values;
-        // AppleSkin HUDOverlayEvent.HungerRestored: x = right edge of the hunger bar, y = its top.
+        // HUDOverlayEvent::HungerRestored: x = right edge of the hunger bar, y = its top.
         float dx = 0, dy = 0;
         if (ctx.held->stack) {
             float x0 = ctx.hungerIcons[0].x + ctx.hungerIcons[0].w;
@@ -97,7 +97,7 @@ public:
             if (!cfg.showVanillaAnimationsOverlay) r.y -= ctx.hungerJitterY[static_cast<std::size_t>(icon.index)];
             r.x += dx;
             r.y += dy;
-            // Very faint background, then the shank (AppleSkin drawHungerOverlay).
+            // Very faint background, then the shank.
             ctx.painter.texture(background, r, alpha * 0.25f);
             ctx.painter.texture(spriteFor(icon.sprite), r, alpha);
         }

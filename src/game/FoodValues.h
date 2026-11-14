@@ -9,13 +9,13 @@ class Player;
 
 namespace beetroot::game {
 
-/// The item's own food values (AppleSkin's "default" values) of one item of `stack`, or nullopt
+/// The item's own food values (the "default" values) of one item of `stack`, or nullopt
 /// if it is not edible (or empty). Reads the item's IFoodItemComponent (nutrition, saturation
 /// modifier, canAlwaysEat); for legacy food components also the eat effects (Regeneration of
 /// golden apples, Hunger of rotten flesh, ...), which decide FoodValues::rotten. Posts no event.
 [[nodiscard]] std::optional<core::FoodValues> getDefaultFoodValues(ItemStackBase const& stack);
 
-/// Default and modified food values (AppleSkin FoodHelper.QueriedFoodResult).
+/// Default and modified food values.
 struct QueriedFoodValues {
     core::FoodValues defaultValues;  ///< After FoodValuesEvent listeners (they may change both).
     core::FoodValues modifiedValues; ///< What every BeetrootSkin display uses.

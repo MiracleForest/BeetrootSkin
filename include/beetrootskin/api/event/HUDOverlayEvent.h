@@ -1,6 +1,6 @@
 #pragma once
 
-// AppleSkin's HUDOverlayEvent: posted (client thread, during the HUD render pass) right before
+// HUDOverlayEvent: posted (client thread, during the HUD render pass) right before
 // BeetrootSkin draws one of its HUD overlays. Cancel an event to suppress that overlay for this
 // draw; change x()/y() to move it. Listen to the concrete (final) classes:
 //
@@ -9,7 +9,7 @@
 // Coordinates are GUI units (screen pixels x GuiData::mInvGuiScale). For the hunger-bar events
 // (Exhaustion, Saturation, HungerRestored) x is the RIGHT edge of the hunger bar and y its top
 // (resting position, without vanilla's shake); for HealthRestored x is the LEFT edge of the
-// hearts and y the top of their bottom row. Like AppleSkin, each event is posted whenever
+// hearts and y the top of their bottom row. Each event is posted whenever
 // BeetrootSkin is about to draw that overlay (enabled in the config, its bar shown, food held for
 // the "restored" previews), every frame, even if it ends up drawing nothing (e.g. saturation 0,
 // or the off phase of the flashing previews).

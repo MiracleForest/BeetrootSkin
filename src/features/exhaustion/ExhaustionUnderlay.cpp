@@ -1,6 +1,6 @@
-// AppleSkin's exhaustion underlay: a strip from icons.png drawn under the hunger bar, growing
+// Exhaustion underlay: a strip from icons.png drawn under the hunger bar, growing
 // from the right edge of the rightmost shank to the left as exhaustion rises from 0 to 4.
-// (AppleSkin HUDOverlayHandler.drawExhaustionOverlay: u = 81 - width, v = 18, alpha 0.75.)
+// (drawExhaustionOverlay: u = 81 - width, v = 18, alpha 0.75.)
 #include "api/Post.h"
 #include "app/Mod.h"
 #include "core/food/FoodMath.h"
@@ -22,7 +22,7 @@ public:
 
     void render(ui::HudContext& ctx) override {
         bool  visible = shouldDraw(ctx);
-        float right = 0, top = 0; // event position (AppleSkin: x = right edge of the bar, y = top)
+        float right = 0, top = 0; // event position (x = right edge of the bar, y = top)
         if (visible) {
             auto const& icon0 = ctx.hungerIcons[0];
             api::HUDOverlayEvent::Exhaustion
@@ -61,7 +61,7 @@ private:
     static bool shouldDraw(ui::HudContext const& ctx) {
         if (!app::config().showFoodExhaustionHudUnderlay) return false;
         if (!ctx.hungerIconsValid || !ctx.hungerBarShown || !ctx.state) return false;
-        // Vanilla shows no hunger bar in creative/spectator; AppleSkin skips its overlays there.
+        // Vanilla shows no hunger bar in creative/spectator; the overlays are skipped there.
         if (ctx.state->creativeLike) return false;
         return true;
     }

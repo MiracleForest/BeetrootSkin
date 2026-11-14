@@ -46,7 +46,7 @@ struct TextureRef {
     friend bool operator==(TextureRef const&, TextureRef const&) = default;
 };
 
-/// AppleSkin's icon sheet (256x256, see core::sprites) and tooltip outline (9x9).
+/// The mod-owned icon sheet (256x256, see core::sprites) and tooltip outline (9x9).
 namespace textures {
 inline TextureRef const ICONS{"textures/icons.png", true};
 inline TextureRef const TOOLTIP_HUNGER_OUTLINE{"textures/tooltip_hunger_outline.png", true};
@@ -94,7 +94,7 @@ public:
     void texture(std::string const& path, core::Rect const& dst, float alpha = 1);
     void texture(TextureRef const& tex, core::Rect const& dst, float alpha = 1, Layer layer = Layer::Foreground);
     /// Sub-rectangle `src` (u, v, w, h in texture pixels) of a `texW` x `texH` texture drawn into
-    /// `dst`, multiplied by `tint` (tint.a is the opacity). E.g. AppleSkin's saturation icon:
+    /// `dst`, multiplied by `tint` (tint.a is the opacity). E.g. the saturation icon:
     /// texture(textures::ICONS, {x, y, 9, 9}, {27, 0, 9, 9}, 256, 256).
     void texture(
         TextureRef const& tex,

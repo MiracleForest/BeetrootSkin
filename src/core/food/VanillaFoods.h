@@ -12,7 +12,7 @@ namespace beetroot::core {
 /// Unknown ids give an empty list. Values follow Bedrock (not Java) where they differ.
 [[nodiscard]] std::vector<FoodEffect> vanillaFoodEffects(std::string_view itemId);
 
-/// True if `effects` contains a harmful effect (AppleSkin's "rotten" textures).
+/// True if `effects` contains a harmful effect (the "rotten" textures).
 [[nodiscard]] bool anyHarmful(std::vector<FoodEffect> const& effects) noexcept;
 
 } // namespace beetroot::core

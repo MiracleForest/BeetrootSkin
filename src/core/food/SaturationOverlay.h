@@ -1,6 +1,6 @@
 #pragma once
 
-// AppleSkin's HUD saturation overlay (HUDOverlayHandler.drawSaturationOverlay) as pure data:
+// The HUD saturation overlay (drawSaturationOverlay) as pure data:
 // which hunger-bar icons get a saturation outline and which sprite each one uses.
 
 #include "core/food/FoodMath.h"
@@ -26,7 +26,7 @@ struct SaturationIcon {
 /// non-finite totals.
 [[nodiscard]] std::vector<SaturationIcon> saturationOverlaySprites(float saturation, float gained);
 
-/// Saturation that eating `food` would add, as AppleSkin previews it: 0 if the food cannot be
+/// Saturation that eating `food` would add, as the preview shows it: 0 if the food cannot be
 /// eaten now, else eat(state, food).saturationGain (capped so the new saturation does not exceed
 /// the new hunger level).
 [[nodiscard]] float saturationPreviewGain(FoodState const& state, FoodValues const& food) noexcept;

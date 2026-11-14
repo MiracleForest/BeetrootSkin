@@ -109,7 +109,7 @@ std::optional<QueriedFoodValues> queryFoodValues(ItemStackBase const& stack, Pla
 }
 
 std::optional<core::FoodValues> getFoodValues(ItemStackBase const& stack, Player const* player) {
-    // The event hands listeners a mutable Player (like AppleSkin); BeetrootSkin never mutates it.
+    // The event hands listeners a mutable Player; BeetrootSkin never mutates it.
     auto q = queryFoodValues(stack, const_cast<Player*>(player));
     if (!q) return std::nullopt;
     return std::move(q->modifiedValues);

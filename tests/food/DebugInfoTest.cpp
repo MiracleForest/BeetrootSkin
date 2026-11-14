@@ -6,7 +6,7 @@
 
 using namespace beetroot::core;
 
-// Expected strings are what java.text.DecimalFormat produces for AppleSkin's patterns.
+// Expected strings are what java.text.DecimalFormat produces for the same patterns.
 
 TEST(FormatDecimal, HashPatternDropsTrailingZerosAndLeadingZero) {
     EXPECT_EQ(formatDecimal(0.f, PATTERN_HASH_2), "0");
@@ -69,7 +69,7 @@ TEST(FormatDecimal, OtherPatterns) {
     EXPECT_EQ(formatDecimal(0.1234567f, {1, 1, 9}), "0.123457"); // maxFractionDigits clamped to 6
 }
 
-TEST(FoodDebugLine, MatchesAppleSkinFormat) {
+TEST(FoodDebugLine, MatchesReferenceFormat) {
     EXPECT_EQ(foodDebugLine(20, 5.f, 0.f), "hunger: 20, sat: 5, exh: 0.00/4");
     EXPECT_EQ(foodDebugLine(17, 0.6f, 2.375f), "hunger: 17, sat: .6, exh: 2.38/4");
     EXPECT_EQ(foodDebugLine(0, 0.f, 3.999f), "hunger: 0, sat: 0, exh: 4.00/4");

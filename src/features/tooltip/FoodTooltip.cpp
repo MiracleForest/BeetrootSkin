@@ -1,4 +1,4 @@
-// AppleSkin's TooltipOverlayHandler: hunger and saturation icons in food item tooltips.
+// Food tooltip overlay: hunger and saturation icons in food item tooltips.
 //
 // Shown for edible items when (showFoodValuesInTooltip && Shift is held) ||
 // showFoodValuesInTooltipAlways. Layout and sprite selection live in core/food/TooltipLayout;
@@ -24,7 +24,7 @@ namespace {
 
 namespace layout = core::tooltip;
 
-// Vanilla HUD hunger sprites (resource pack paths). Like AppleSkin, the background is always the
+// Vanilla HUD hunger sprites (resource pack paths). The background is always the
 // plain empty shank and rotten food uses the hunger-effect (green) shanks.
 ui::TextureRef const HUNGER_BACKGROUND  = ui::TextureRef::pack("textures/ui/hunger_background");
 ui::TextureRef const HUNGER_FULL        = ui::TextureRef::pack("textures/ui/hunger_full");
@@ -50,8 +50,8 @@ struct Food {
 };
 
 /// Rotten flag and layout of `stack` if the tooltip should show food values. Default and
-/// modified values come from api::FoodValuesEvent (AppleSkin FoodHelper.query); differing values
-/// get AppleSkin's outlines. api::TooltipOverlayEvent::Pre may veto the whole overlay.
+/// modified values come from api::FoodValuesEvent; differing values
+/// get outlines. api::TooltipOverlayEvent::Pre may veto the whole overlay.
 std::optional<Food> query(ItemStackBase const& stack) {
     if (!enabled()) return std::nullopt;
     auto q = game::queryFoodValues(stack);
@@ -92,7 +92,7 @@ public:
         auto& p = ctx.painter;
         api::TooltipOverlayEvent::Render
             ev{ctx.stack, ctx.area.x, ctx.area.y, p.raw(), food->defaultFood, food->modifiedFood};
-        if (!api_impl::postCancellable(ev)) return; // space stays reserved (AppleSkin)
+        if (!api_impl::postCancellable(ev)) return; // space stays reserved
         auto const&     l      = food->layout;
         float const     x0     = ev.x();
         float const     y0     = ev.y();

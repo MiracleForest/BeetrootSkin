@@ -1,4 +1,4 @@
-# Food values in item tooltips (AppleSkin TooltipOverlayHandler), with
+# Food values in item tooltips (tooltip overlay), with
 # showFoodValuesInTooltipAlways = false (see tooltip.prelaunch.ps1): every food is hovered
 # without and with Shift held (raw key down), in the survival inventory, the creative inventory
 # and a chest.

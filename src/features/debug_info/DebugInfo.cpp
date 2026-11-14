@@ -1,4 +1,4 @@
-// AppleSkin's food debug info: the F3 line "hunger: N, sat: #.##, exh: 0.00/4".
+// Food debug info: the F3 line "hunger: N, sat: #.##, exh: 0.00/4".
 //
 // Bedrock has no F3 screen, so the line is drawn on the HUD (top left, above the vanilla
 // "Position" / "Days played" text and chat, see the layout notes below) while

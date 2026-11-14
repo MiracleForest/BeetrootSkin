@@ -4,7 +4,7 @@ version = "0.1.0"
 
 [info]
 name = "BeetrootSkin"
-description = "AppleSkin-style food and hunger information for Minecraft Bedrock Edition"
+description = "Food and hunger information for Minecraft Bedrock Edition"
 tags = ["visual", "utility", "hud", "food", "tooltip"]
 logo = "https://raw.githubusercontent.com/MiracleForest/BeetrootSkin/main/docs/logo.png"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// AppleSkin's TooltipOverlayEvent: posted (client thread) for the food values BeetrootSkin adds
+// TooltipOverlayEvent: posted (client thread) for the food values BeetrootSkin adds
 // to item tooltips. Listen to the concrete (final) classes:
 //
 //     bus.emplaceListener<beetroot::api::TooltipOverlayEvent::Pre>([](auto& ev) {
@@ -32,7 +32,7 @@ public:
     /// The hovered item (only valid during the call).
     [[nodiscard]] ItemStackBase const& itemStack() const { return mItemStack; }
     /// Values from the item and after FoodValuesEvent (what the tooltip shows; differing values
-    /// are drawn with AppleSkin's outlines).
+    /// are drawn with outlines).
     [[nodiscard]] FoodValues const& defaultFood() const { return mDefaultFood; }
     [[nodiscard]] FoodValues const& modifiedFood() const { return mModifiedFood; }
 

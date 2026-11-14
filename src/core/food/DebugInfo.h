@@ -1,7 +1,7 @@
 #pragma once
 
-// AppleSkin's food debug line ("hunger: 20, sat: 5, exh: 0.00/4"), formatted exactly like
-// AppleSkin's DebugInfoHandler (java.text.DecimalFormat patterns "#.##" and "0.00").
+// The food debug line ("hunger: 20, sat: 5, exh: 0.00/4"), formatted exactly like
+// java.text.DecimalFormat with the patterns "#.##" and "0.00".
 
 #include "core/food/FoodMath.h"
 
@@ -26,7 +26,7 @@ inline constexpr DecimalPattern PATTERN_ZERO_2 = {1, 2, 2}; ///< "0.00"
 /// NaN -> "NaN", infinities -> "∞" / "-∞" (Java's symbols).
 [[nodiscard]] std::string formatDecimal(float value, DecimalPattern pattern);
 
-/// AppleSkin's debug text: "hunger: <int>, sat: <#.##>, exh: <0.00>/<#.##>".
+/// Debug text: "hunger: <int>, sat: <#.##>, exh: <0.00>/<#.##>".
 [[nodiscard]] std::string
 foodDebugLine(int hunger, float saturation, float exhaustion, float maxExhaustion = MAX_EXHAUSTION);
 [[nodiscard]] std::string foodDebugLine(FoodState const& state);

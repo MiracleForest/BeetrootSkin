@@ -31,7 +31,7 @@ void               setForceClientSource(bool force);
 /// fields (effects, game mode, hardcore, riding) are the client's in either case. Client thread.
 [[nodiscard]] std::optional<core::FoodState> readIntegratedServerFoodState();
 
-/// Food the local player holds, as AppleSkin picks it.
+/// Food the local player holds (main hand first, then offhand).
 struct HeldFood {
     core::FoodValues values;          ///< Modified values (after api::FoodValuesEvent).
     bool             offhand = false; ///< Taken from the offhand slot.

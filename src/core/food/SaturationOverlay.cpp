@@ -19,7 +19,7 @@ std::vector<SaturationIcon> saturationOverlaySprites(float saturation, float gai
     if (!std::isfinite(saturation) || !std::isfinite(gained)) return out;
     float total = snapToWhole(saturation + gained);
     if (total < 0) return out;
-    // AppleSkin drawSaturationOverlay: icons [start, ceil(modified / 2)).
+    // drawSaturationOverlay: icons [start, ceil(modified / 2)).
     float modified = std::clamp(total, 0.f, MAX_SATURATION);
     int   first    = gained != 0 ? static_cast<int>(std::max(saturation / 2.f, 0.f)) : 0;
     int   last     = static_cast<int>(std::ceil(modified / 2.f));

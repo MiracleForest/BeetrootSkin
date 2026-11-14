@@ -12,7 +12,7 @@ body:
     id: solution
     attributes:
       label: Proposed solution
-      description: How should it work? If AppleSkin on Java Edition does this, describe how it behaves there.
+      description: How should it work? Describe the behaviour you expect.
     validations:
       required: true
   - type: textarea

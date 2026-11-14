@@ -1,4 +1,4 @@
-# Hunger-restored HUD preview (AppleSkin HUDOverlayHandler HungerRestored).
+# Hunger-restored HUD preview (HungerRestored overlay).
 # Holds several foods at ~6-10 hunger and screenshots the flashing shanks over a full flash
 # cycle (32 ticks = 1.6 s), then checks the offhand, a non-food item, creative mode and a full
 # hunger bar. The layer logs "Hunger preview: ..." on every change of what it shows.
@@ -87,7 +87,7 @@ Expect-Preview "hunger=$h food=5 icons=.* offhand" $n
 Shot-Cycle 'offhand_bread'
 Invoke-Chat '/replaceitem entity @s slot.weapon.offhand 0 air'
 
-# Creative: hidden (AppleSkin: !canHurtPlayer).
+# Creative: hidden (!canHurtPlayer).
 Select-Hotbar 1
 Start-Sleep -Milliseconds 500
 Set-Creative

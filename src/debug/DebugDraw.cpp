@@ -1,6 +1,6 @@
 // Scaffold verification aids, active only when bin/BeetrootSkin/debug_draw exists (the e2e
 // smoke scenario creates it). They prove the contracts end to end:
-// - a HUD layer that outlines every hunger/heart icon rect and draws AppleSkin's saturation
+// - a HUD layer that outlines every hunger/heart icon rect and draws the saturation
 //   sprite from the mod-owned icons.png over the hunger bar;
 // - a tooltip extension that fills its reserved area and logs the hovered item's food values.
 #include "app/Mod.h"
@@ -43,7 +43,7 @@ public:
         auto& p = ctx.painter;
         for (int i = 0; i < core::ICONS_PER_ROW; ++i) {
             auto const& r = ctx.hungerIcons[static_cast<std::size_t>(i)];
-            // AppleSkin full saturation outline (u=27, v=0) from the mod-owned icons.png.
+            // Full saturation outline (u=27, v=0) from the mod-owned icons.png.
             p.texture(
                 ui::textures::ICONS,
                 r,

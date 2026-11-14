@@ -1,4 +1,4 @@
-// BeetrootSkin's public API (include/beetrootskin/api): registers the AppleSkin-style events
+// BeetrootSkin's public API (include/beetrootskin/api): registers the API events
 // with LeviLamina's EventBus and implements the exported functions.
 //
 // LeviLamina only accepts listeners for events that have an emitter registered

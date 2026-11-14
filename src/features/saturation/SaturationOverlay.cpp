@@ -1,4 +1,4 @@
-// AppleSkin's saturation HUD overlay (HUDOverlayHandler.drawSaturationOverlay):
+// Saturation HUD overlay:
 // - base overlay: the current saturation as golden outlines over the hunger shanks (alpha 1);
 // - gain preview: the saturation the held food would add, flashing at the food-values alpha,
 //   starting at the current saturation's last icon.
@@ -21,7 +21,7 @@ namespace {
 constexpr float ICON = static_cast<float>(core::sprites::HUD_ICON_SIZE);
 
 /// Draw `icons` over the hunger bar at `alpha`. With showVanillaAnimationsOverlay off the vanilla
-/// jitter is removed so the outlines stay still (AppleSkin only follows the shake when enabled).
+/// jitter is removed so the outlines stay still (the shake is followed only when enabled).
 /// `dx`/`dy` move the icons (a HUDOverlayEvent::Saturation listener changed x/y).
 void drawIcons(ui::HudContext& ctx, std::vector<core::SaturationIcon> const& icons, float alpha, float dx, float dy) {
     if (icons.empty() || !(alpha > 0)) return;
@@ -49,7 +49,7 @@ bool hungerBarVisible(ui::HudContext const& ctx) {
     return ctx.hungerIconsValid && ctx.state && !ctx.state->creativeLike;
 }
 
-/// AppleSkin posts one HUDOverlayEvent.Saturation for the whole saturation overlay (current
+/// One HUDOverlayEvent::Saturation is posted for the whole saturation overlay (current
 /// saturation and the held food's gain). The base layer (order 0) posts it every hunger draw and
 /// leaves the outcome here for the gain layer (order 20) of the same draw.
 struct SaturationEventResult {
@@ -116,7 +116,7 @@ private:
 };
 
 /// Gain preview: the saturation the held food would add, at the flashing food-values alpha.
-/// AppleSkin draws it only when both the food-values overlay and the saturation overlay are on.
+/// Drawn only when both the food-values overlay and the saturation overlay are on.
 class SaturationGainLayer final : public ui::IHudLayer {
 public:
     [[nodiscard]] ui::HudSlot slot() const override { return ui::HudSlot::AboveHunger; }

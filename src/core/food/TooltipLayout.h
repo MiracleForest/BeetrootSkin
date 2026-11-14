@@ -1,6 +1,6 @@
 #pragma once
 
-// Layout of AppleSkin's food tooltip (TooltipOverlayHandler.FoodTooltip / FoodTooltipRenderer):
+// Layout of the food tooltip (FoodTooltip / FoodTooltipRenderer):
 // a row of 9x9 hunger shanks and below it a row of 7x7 saturation icons, both drawn right to
 // left, with an "xN" text instead of the icons when there would be more than 10 of them.
 // All positions are GUI pixels relative to the top-left corner of the tooltip component.
@@ -13,7 +13,7 @@ namespace beetroot::core::tooltip {
 inline constexpr int HUNGER_ICON_SIZE     = 9;
 inline constexpr int SATURATION_ICON_SIZE = 7;
 inline constexpr int SATURATION_ROW_Y     = HUNGER_ICON_SIZE + 1; ///< 10
-/// Component height: hunger + spacing + saturation + AppleSkin's "3 extra looks best".
+/// Component height: hunger + spacing + saturation + 3 extra pixels (looks best).
 inline constexpr int HEIGHT   = HUNGER_ICON_SIZE + 1 + SATURATION_ICON_SIZE + 3; ///< 20
 inline constexpr int MAX_BARS = 10;
 /// Overflow text ("x12") is drawn at this scale and color (ARGB).
@@ -22,7 +22,7 @@ inline constexpr unsigned int OVERFLOW_TEXT_ARGB  = 0xFFAAAAAA;
 /// Width in pixels of one glyph of the Minecraft font used for the overflow text ('x', '-', digits).
 inline constexpr int GLYPH_WIDTH = 6;
 
-/// AppleSkin FoodOutline: tint of the outline drawn behind a hunger shank.
+/// FoodOutline: tint of the outline drawn behind a hunger shank.
 enum class Outline { Negative, Extra, Normal, Partial, Missing };
 
 /// FoodOutline.get(modifiedHunger, defaultHunger, i) where i = 2 * barIndex.
@@ -67,12 +67,12 @@ struct FoodTooltipLayout {
     int         saturationBars = 0;
     std::string saturationBarsText; ///< Set when the saturation bars were > 10 or 0 (then saturationBars = 1).
 
-    std::vector<HungerIcon>     hunger;     ///< Draw order (rightmost bar first, like AppleSkin).
+    std::vector<HungerIcon>     hunger;     ///< Draw order (rightmost bar first).
     std::vector<SaturationIcon> saturation; ///< Draw order (rightmost first).
     OverflowText                hungerText;
     OverflowText                saturationText;
 
-    /// AppleSkin shows the component only when hungerBars > 0.
+    /// The component is shown only when hungerBars > 0.
     [[nodiscard]] bool visible() const noexcept { return hungerBars > 0; }
     /// getWidth(): max(hungerBars*9 + textW, saturationBars*7 + textW) + 2, with the unscaled
     /// font width of the texts estimated by estimateTextWidth.

@@ -1,5 +1,5 @@
 // HUD plumbing: hooks the vanilla hunger and heart renderers, computes icon rectangles and runs
-// the registered IHudLayers around them. Also drives the AppleSkin flash animation per tick.
+// the registered IHudLayers around them. Also drives the overlay flash animation per tick.
 #include "ui/hud/HudHooks.h"
 
 #include "app/Mod.h"
@@ -43,7 +43,7 @@ bool                                        gHungerShown = true;
 std::vector<core::Rect>                     gHeartIcons;
 std::vector<float>                          gHeartJitter;
 
-/// game::heldFood() at most once per client tick (AppleSkin's HeldFoodCache queries once per GUI
+/// game::heldFood() at most once per client tick (the held food is queried once per GUI
 /// tick), so api::FoodValuesEvent listeners do not run for every HUD pass of every frame. Requeried
 /// when the player object or the held slot changes; the cached stack pointer is only compared,
 /// never dereferenced, before it is known to be the player's current slot.
@@ -243,7 +243,7 @@ LL_TYPE_INSTANCE_HOOK(
         seenPasses |= 1u << pass;
         log().info("Hunger renderer pass: {}", pass);
     }
-    // Vanilla draws no hunger bar this frame: no hunger overlays either (AppleSkin only draws
+    // Vanilla draws no hunger bar this frame: no hunger overlays either (they are only drawn
     // where vanilla food is drawn; note Bedrock keeps the bar while riding, unlike Java).
     if (!gHungerShown) return origin(ctx, client, owner, pass);
     runLayers(HudSlot::BelowHunger, ctx, control);

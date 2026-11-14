@@ -15,7 +15,7 @@ FoodTooltipLayout layoutOf(int hunger, float saturation) {
 }
 } // namespace
 
-TEST(TooltipLayout, OutlineMatchesAppleSkin) {
+TEST(TooltipLayout, OutlineMatchesReference) {
     EXPECT_EQ(outlineFor(-2, -2, 0), Outline::Negative);
     EXPECT_EQ(outlineFor(4, 4, 0), Outline::Normal); // default == modified
     EXPECT_EQ(outlineFor(4, 4, 2), Outline::Normal);

@@ -1,6 +1,6 @@
 #pragma once
 
-// AppleSkin's "health restored" HUD overlay, as pure logic: when to show it and which heart
+// The "health restored" HUD overlay, as pure logic: when to show it and which heart
 // icons to draw. The drawing itself lives in src/features/health_preview.
 
 #include "core/food/FoodMath.h"
@@ -9,11 +9,11 @@
 
 namespace beetroot::core {
 
-/// Largest number of hearts the overlay handles (AppleSkin: more than 1000 hearts, or a
+/// Largest number of hearts the overlay handles (more than 1000 hearts, or a
 /// non-finite health, disables it).
 inline constexpr int MAX_HEALTH_PREVIEW_HEARTS = 1000;
 
-/// AppleSkin shouldShowEstimatedHealth + the HealthOverlay render conditions for the player
+/// shouldShowEstimatedHealth + the HealthOverlay render conditions for the player
 /// state alone (the config option and the held food are checked by the caller): false for
 /// creative/spectator, when riding, on Peaceful, at hunger >= 18 (natural regeneration already
 /// running), with Poison/Wither/Regeneration, when dead, and for non-finite or huge
@@ -35,7 +35,7 @@ struct HealthPreviewPlan {
 };
 
 /// Hearts to draw for eating `food` in `state`: healthPreviewIcons(health,
-/// estimatedHealthAfterEating) with AppleSkin's half-heart rule (i * 2 + 1 == ceil(new health)).
+/// estimatedHealthAfterEating) with the half-heart rule (i * 2 + 1 == ceil(new health)).
 /// No icons when healthPreviewAllowed is false, the food cannot be eaten or nothing is gained.
 [[nodiscard]] HealthPreviewPlan healthPreviewPlan(FoodState const& state, FoodValues const& food);
 

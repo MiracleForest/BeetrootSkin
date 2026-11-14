@@ -1,7 +1,7 @@
 # AGENTS.md
 
-BeetrootSkin is a port of [AppleSkin](https://github.com/squeek502/AppleSkin) (Java Edition food and
-hunger HUD/tooltip info) to Minecraft Bedrock, built as a **client** mod on LeviLamina, with xmake and
+BeetrootSkin shows food and hunger information (HUD overlays and tooltips) in Minecraft Bedrock,
+built as a **client** mod on LeviLamina, with xmake and
 clang-cl on Windows x64.
 The project layout, rules and harness come from the sibling project BEI (same author, LGPL-3.0-or-later).
 
@@ -17,18 +17,18 @@ same name, and `--levilamina` picks the one being built:
 
 | Path | What it is |
 | ---- | ---------- |
-| `src/core/` | Pure C++ logic, **no `mc/` or `ll/` includes**. Static lib `beetroot-core`, unit-tested on the host. `food/FoodMath` (Bedrock hunger/saturation/regen math, flash animation, AppleSkin sprite math), `food/HealthPreview` (health-restored overlay plan, `restingIconY`), `state/Config` (+`AtomicWrite`, `FileWatch`: live-reload change detection), `geom/Rect`, `geom/IconRows` (`RestingRows`: resting line of a shaking HUD icon bar). |
+| `src/core/` | Pure C++ logic, **no `mc/` or `ll/` includes**. Static lib `beetroot-core`, unit-tested on the host. `food/FoodMath` (Bedrock hunger/saturation/regen math, flash animation, icon sprite math), `food/HealthPreview` (health-restored overlay plan, `restingIconY`), `state/Config` (+`AtomicWrite`, `FileWatch`: live-reload change detection), `geom/Rect`, `geom/IconRows` (`RestingRows`: resting line of a shaking HUD icon bar). |
 | `src/game/` | Adapters from game objects to core structs: `Game` (client/player/level helpers), `FoodValues` (item -> `core::FoodValues`), `PlayerFoodState` (local player -> `core::FoodState`, held food). |
 | `src/ui/` | Rendering: `gfx/Painter`, `hud/HudHooks` (HUD layer contract + plumbing), `tooltip/TooltipHooks` (tooltip extension contract + plumbing), `Keys` (`isShiftDown()`). |
 | `src/app/` | `Module` registry, `Mod` (paths, `config()`, `saveConfig()`, `pollConfigFile()`, `debugDraw()`), `ConfigWatch` (live config reload module), `I18n` (`tr()`), `KeyNames` (controls-menu names of BeetrootSkin keys). |
 | `src/mod/` | Entry point (`BeetrootSkin.cpp`), `Log.h`, `MemoryOperators.cpp`. Installs every registered module; **features never edit it**. |
 | `src/api/` | Implementation of the public API: registers the API events (`Api.cpp`, `onLoad()`), `Post.h` (`post`, `postCancellable`, cancellation logging). |
-| `include/beetrootskin/api/` | **Public API headers** for other mods (AppleSkin's API): `FoodValues.h`, `Events.h`, `event/{FoodValuesEvent,TooltipOverlayEvent,HUDOverlayEvent}.h`, `Macros.h` (`BEETROOTSKIN_API`). Copied with `BeetrootSkin.lib` to `bin/BeetrootSkin-sdk/` at build time. |
+| `include/beetrootskin/api/` | **Public API headers** for other mods: `FoodValues.h`, `Events.h`, `event/{FoodValuesEvent,TooltipOverlayEvent,HUDOverlayEvent}.h`, `Macros.h` (`BEETROOTSKIN_API`). Copied with `BeetrootSkin.lib` to `bin/BeetrootSkin-sdk/` at build time. |
 | `samples/api_sample/` | Test-only mod using the API from another DLL (`xmake f --api_sample=y`, output `bin/beetroot-api-sample/`, e2e scenario `api`). Never shipped. |
 | `src/debug/` | Debug HUD layer + tooltip extension, active only with the `debug_draw` marker (see below). |
 | `src/features/<name>/` | One folder per feature (added by feature work). Picked up by the `src/**.cpp` glob. |
 | `assets/lang/<locale>/*.json` | Translation fragments, merged into `bin/BeetrootSkin/lang/<locale>.json` at build time. Each feature owns its own fragment file; a duplicate key fails the build. |
-| `assets/textures/**` | Mod-owned textures, copied to `bin/BeetrootSkin/textures/` at build time. `icons.png` and `tooltip_hunger_outline.png` are AppleSkin's (Unlicense, see `assets/textures/NOTICE`). |
+| `assets/textures/**` | Mod-owned textures, copied to `bin/BeetrootSkin/textures/` at build time. `icons.png` and `tooltip_hunger_outline.png` are third-party (Unlicense, see `assets/textures/NOTICE`). |
 | `tests/` | GoogleTest suites for `src/core` (target `beetroot-tests`). |
 | `tools/e2e/` | PowerShell harness that drives the real game (see `tools/e2e/README.md`). |
 
@@ -53,9 +53,9 @@ never change or remove existing ones); never edit `src/mod/`.
   `estimatedHealthAfterEating`, `FlashAnimator`, `isHarmfulEffect`, `effect_id::*`,
   `sprites::{hudSaturationU, tooltipSaturationU, tooltipSaturationV, exhaustionBarWidth, ...}`.
 - `core/food/DebugInfo.h`: `formatDecimal(value, DecimalPattern)` (java.text.DecimalFormat-like),
-  `foodDebugLine(...)` (AppleSkin's debug text).
+  `foodDebugLine(...)` (the debug text).
 - `core/food/VanillaFoods.h`: `vanillaFoodEffects(itemId)`, `anyHarmful(effects)`.
-- `core/state/Config.h`: `Config` with AppleSkin's option names.
+- `core/state/Config.h`: `Config` with the mod's option names.
 - `core/geom/Rect.h`: `Rect` (GUI units).
 - `core/geom/IconRows.h`: `RestingRows`, `jitterOffsets`.
 - `game/Game.h`: `currentClient()`, `currentLevel()`, `currentPlayer()`, `integratedServerLevel()`.
@@ -85,7 +85,7 @@ gets a fresh `HudContext`:
 - `painter`: draws immediately (flushed after every layer);
 - `slot`, `control` (owner UIControl rect);
 - `hungerIcons[10]` (9x9 GUI rects, **index 0 = rightmost shank**, i.e. hunger 1-2, like
-  AppleSkin's icon index), `hungerIconsValid`, `hungerJitterY[10]` (vanilla jitter offset, already
+  the icon index), `hungerIconsValid`, `hungerJitterY[10]` (vanilla jitter offset, already
   included in the rects; subtract it to draw at rest when `showVanillaAnimationsOverlay` is off);
 - `heartIcons` / `heartJitterY` (index 0 = leftmost heart of the bottom row; jitter = low-health shake);
 - `state` (`readFoodState()`), `held` (`heldFood()`), `flashAlpha` (FlashAnimator x
@@ -113,7 +113,7 @@ content width, stacked top to bottom in `order()`).
 
 ### Public API (`include/beetrootskin/api`)
 
-AppleSkin's API as LeviLamina events on `ll::event::EventBus` (client thread). `src/api/Api.cpp`
+The public API as LeviLamina events on `ll::event::EventBus` (client thread). `src/api/Api.cpp`
 registers every event with an empty emitter in `onLoad()` (LeviLamina rejects listeners for events
 without an emitter; dependents subscribe in their `enable()`, which runs after BeetrootSkin's
 `load()` when they declare the dependency). Identity across DLLs is each class's
@@ -283,7 +283,7 @@ before configuring. Switching lines means another `Copy-Item` and another `xmake
 ## Debug drawing
 
 If `mods/BeetrootSkin/debug_draw` exists at load (`app::debugDraw()`), `src/debug/DebugDraw.cpp`
-outlines every hunger/heart icon rect, draws AppleSkin's saturation sprite and exhaustion strip
+outlines every hunger/heart icon rect, draws the saturation sprite and exhaustion strip
 from `icons.png` on the hunger bar, reserves a magenta 10-unit area in every item tooltip and logs
 held/hovered food values. The e2e `smoke` scenario creates and removes the marker.
 

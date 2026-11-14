@@ -1,6 +1,6 @@
 #pragma once
 
-// AppleSkin's FoodValuesEvent: customize the hunger/saturation values BeetrootSkin shows for a
+// FoodValuesEvent: customize the hunger/saturation values BeetrootSkin shows for a
 // food. Posted (client thread) whenever BeetrootSkin determines the food values of an item: for
 // item tooltips and for the held food behind every HUD preview (hunger, saturation and health
 // restored). Not cancellable.

@@ -106,7 +106,7 @@ Reference positions at 1600x900 (GUI scale 3, 1 GUI unit = 2.4 screenshot pixels
 - survival inventory, hotbar slot 1: `0.50 0.72`; each further slot `+0.034` in x.
 
 `smoke.prelaunch.ps1` shows how to enable the debug drawing (`debug_draw` marker in the deployed
-mod folder): outlines of every HUD icon rect, AppleSkin sprites from the mod-owned `icons.png`, and
+mod folder): outlines of every HUD icon rect, sprites from the mod-owned `icons.png`, and
 a magenta area reserved in item tooltips, plus `Debug: held food ...` / `Debug: hovered ...` log
 lines with the parsed food values.
 

@@ -1,4 +1,4 @@
-// AppleSkin's HealthRestored overlay: while edible food is held, flash the hearts that eating it
+// HealthRestored overlay: while edible food is held, flash the hearts that eating it
 // would restore (natural regeneration after eating + the food's Regeneration effect, Bedrock
 // rules, see core/food/HealthPreview.h) on top of the vanilla hearts.
 #include "core/food/HealthPreview.h"
@@ -77,7 +77,7 @@ public:
         auto const&             cfg = app::config();
         core::HealthPreviewPlan plan;
         if (cfg.showFoodHealthHudOverlay && ctx.held) plan = core::healthPreviewPlan(*ctx.state, ctx.held->values);
-        // AppleSkin HUDOverlayEvent.HealthRestored: only when the estimate exceeds the current
+        // HUDOverlayEvent::HealthRestored: only when the estimate exceeds the current
         // health; x = left edge of the hearts, y = top of their bottom row (resting).
         float dx = 0, dy = 0;
         if (!plan.icons.empty() && !ctx.heartIcons.empty() && ctx.held && ctx.held->stack) {
@@ -107,11 +107,11 @@ public:
             if (icon.index < 0 || i >= ctx.heartIcons.size()) continue;
             auto rect = ctx.heartIcons[i];
             // The rects include vanilla's low-health shake; follow it only with
-            // showVanillaAnimationsOverlay (AppleSkin), else draw at the resting position.
+            // showVanillaAnimationsOverlay, else draw at the resting position.
             if (!cfg.showVanillaAnimationsOverlay && i < ctx.heartJitterY.size()) rect.y -= ctx.heartJitterY[i];
             rect.x += dx;
             rect.y += dy;
-            // Very faint container, then the heart (AppleSkin drawHealthOverlay).
+            // Very faint container, then the heart.
             ctx.painter.texture(HEART_CONTAINER, rect, alpha * 0.25f);
             ctx.painter.texture(icon.half ? half : full, rect, alpha);
         }

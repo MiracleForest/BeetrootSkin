@@ -116,7 +116,7 @@ struct EatResult {
 };
 [[nodiscard]] EatResult eat(FoodState const& state, FoodValues const& food) noexcept;
 
-/// Half-open icon index range [first, last) of the hunger bar affected by eating (AppleSkin:
+/// Half-open icon index range [first, last) of the hunger bar affected by eating (
 /// from hunger/2 to ceil(min(20, hunger + food)/2)). Empty when food.hunger <= 0.
 struct IconRange {
     int                first = 0;
@@ -126,7 +126,7 @@ struct IconRange {
     friend bool        operator==(IconRange const&, IconRange const&) = default;
 };
 [[nodiscard]] IconRange hungerPreviewIcons(int currentHunger, int foodHunger) noexcept;
-/// Saturation bar icons to draw for `saturation + gained` (AppleSkin drawSaturationOverlay):
+/// Saturation bar icons to draw for `saturation + gained` (drawSaturationOverlay):
 /// from saturation/2 (only when gained != 0, else 0) to ceil(clamp(sat+gained, 0, 20)/2).
 [[nodiscard]] IconRange saturationOverlayIcons(float saturation, float gained) noexcept;
 /// Heart icons affected when health rises from `health` to `newHealth` (half-hearts).
@@ -145,7 +145,7 @@ struct IconRange {
 /// (minecraft.wiki "Regeneration").
 [[nodiscard]] float regenerationEffectHealth(int amplifier, int durationTicks) noexcept;
 
-/// Estimated HP gained by eating `food` (AppleSkin getEstimatedHealthIncrement for Bedrock):
+/// Estimated HP gained by eating `food` (getEstimatedHealthIncrement for Bedrock):
 /// 0 if not hurt; natural regen from the post-eat values (if naturalRegen, not peaceful and the
 /// new hunger is >= 18) plus the first Regeneration effect (weighted by its chance).
 /// Not capped; see estimatedHealthAfterEating for the capped value.
@@ -153,7 +153,7 @@ struct IconRange {
 /// min(maxHealth, health + estimatedHealthIncrement).
 [[nodiscard]] float estimatedHealthAfterEating(FoodState const& state, FoodValues const& food) noexcept;
 
-/// AppleSkin's pulsing overlay alpha. Call tick() once per client tick (20 Hz).
+/// Pulsing overlay alpha. Call tick() once per client tick (20 Hz).
 class FlashAnimator {
 public:
     static constexpr float STEP = 0.125f;
@@ -173,7 +173,7 @@ private:
     int   mDir       = 1;
 };
 
-/// Sprite helpers for AppleSkin's icons.png (256x256). All values are texture pixels.
+/// Sprite helpers for the mod-owned icons.png (256x256). All values are texture pixels.
 namespace sprites {
 inline constexpr float ICONS_TEXTURE_SIZE = 256;
 inline constexpr int   HUD_ICON_SIZE      = 9;

@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/github/v/release/MiracleForest/BeetrootSkin)](https://github.com/MiracleForest/BeetrootSkin/releases)
 [![License](https://img.shields.io/github/license/MiracleForest/BeetrootSkin)](COPYING.LESSER)
 
-吃什么、吃多少，心里有数。BeetrootSkin 把 Java 版的人气模组 [AppleSkin](https://github.com/squeek502/AppleSkin) 带到了基岩版：物品提示里直接写着食物的饥饿值和饱和度，手里拿着食物就能预览吃下去的效果，平时看不见的饱和度和消耗度也会显示在 HUD 上。
+吃什么、吃多少，心里有数。BeetrootSkin 为基岩版带来：物品提示里直接写着食物的饥饿值和饱和度，手里拿着食物就能预览吃下去的效果，平时看不见的饱和度和消耗度也会显示在 HUD 上。
 
 <p align="center"><img src="docs/showcase/hud-preview.webp" alt="手持熟牛肉时，HUD 上闪烁显示它能恢复的鸡腿和生命值" width="720"></p>
 
@@ -51,7 +51,7 @@
 
 ## 设置
 
-所有功能默认开启。如需调整，编辑 `mods/BeetrootSkin/config/config.json`，保存后一秒内生效，游戏中也可以改。配置项名称与 AppleSkin 相同。
+所有功能默认开启。如需调整，编辑 `mods/BeetrootSkin/config/config.json`，保存后一秒内生效，游戏中也可以改。
 
 | 配置项 | 默认值 | 作用 |
 | --- | --- | --- |
@@ -66,7 +66,7 @@
 | `maxHudOverlayFlashAlpha` | `0.65` | 闪烁预览最亮时的不透明度，`0` 到 `1`。 |
 | `showFoodDebugInfo` | `false` | 显示精确数值那一行（即 `F6` 切换的内容）。 |
 
-基岩版的回血规则和 Java 版不同（饥饿值不低于 18 时匀速回血），生命值预览按基岩版规则计算，所以同一种食物的预览可能和 Java 版 AppleSkin 不一样。
+基岩版的回血规则和 Java 版不同（饥饿值不低于 18 时匀速回血），生命值预览按基岩版规则计算，所以同一种食物的预览可能和 Java 版不一样。
 
 ## 更多
 
@@ -76,4 +76,4 @@
 
 ## 许可证
 
-[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest。HUD 和提示框图标来自 squeek502 的 AppleSkin，以 Unlicense 发布（见 [NOTICE](assets/textures/NOTICE)）。本项目与 Mojang Studios、Microsoft 及 AppleSkin 项目均无关联。
+[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest。HUD 和提示框图标来自第三方，以 Unlicense 发布，第三方声明见 [NOTICE](assets/textures/NOTICE)。本项目与 Mojang Studios、Microsoft 均无关联。

@@ -9,7 +9,7 @@
 namespace beetroot::core {
 
 /// User configuration, persisted as JSON in the mod's config dir (config/config.json).
-/// Field names follow AppleSkin's config so its documentation applies.
+/// Field names are the JSON keys in config.json.
 ///
 /// Adding a field: add the member with its default, read/write it in Config.cpp
 /// (fromJsonText/toJsonText + KNOWN_KEYS), clamp it in sanitize() if it has a range, and add a

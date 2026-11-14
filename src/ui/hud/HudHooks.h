@@ -41,7 +41,7 @@ struct HudContext {
     core::Rect control;
 
     /// Hunger icons (9x9 each). Index 0 is the RIGHTMOST shank (hunger points 1-2), index 9 the
-    /// leftmost (19-20), like AppleSkin's icon index i <-> hunger 2i+1..2i+2. Includes the
+    /// leftmost (19-20), like the icon index i <-> hunger 2i+1..2i+2. Includes the
     /// vanilla per-icon jitter when the game applied any. `hungerIconsValid` is false until the
     /// hunger renderer has been seen once (then the rects are a best-effort layout).
     std::array<core::Rect, core::ICONS_PER_ROW> hungerIcons{};
@@ -68,7 +68,7 @@ struct HudContext {
     std::optional<core::FoodState> state;
     std::optional<game::HeldFood>  held;
 
-    /// AppleSkin flash alpha for the "food value" overlays: FlashAnimator alpha already scaled
+    /// Flash alpha for the "food value" overlays: FlashAnimator alpha already scaled
     /// by Config::maxHudOverlayFlashAlpha (0 when nothing is held).
     float flashAlpha = 0;
     /// Client ticks since the mod was enabled (20 Hz while a level ticks).
@@ -92,7 +92,7 @@ public:
 
 /// Client ticks counted by the HUD module (ClientLevelTickEvent, 20 Hz while in a level).
 [[nodiscard]] int clientTickCount();
-/// Current AppleSkin flash alpha (FlashAnimator x Config::maxHudOverlayFlashAlpha); advanced
+/// Current overlay flash alpha (FlashAnimator x Config::maxHudOverlayFlashAlpha); advanced
 /// once per client tick while food is held, reset otherwise.
 [[nodiscard]] float hudFlashAlpha();
 

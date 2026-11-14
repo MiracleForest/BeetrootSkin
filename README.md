@@ -7,7 +7,7 @@ English | [简体中文](README.zh-CN.md)
 [![Release](https://img.shields.io/github/v/release/MiracleForest/BeetrootSkin)](https://github.com/MiracleForest/BeetrootSkin/releases)
 [![License](https://img.shields.io/github/license/MiracleForest/BeetrootSkin)](COPYING.LESSER)
 
-Know exactly what your food is worth. BeetrootSkin brings [AppleSkin](https://github.com/squeek502/AppleSkin), the much-loved Java Edition mod, to Minecraft Bedrock: food values in tooltips, a preview of what eating will restore, and the hidden saturation and exhaustion made visible on your HUD.
+Know exactly what your food is worth. BeetrootSkin gives Minecraft Bedrock food values in tooltips, a preview of what eating will restore, and the hidden saturation and exhaustion made visible on your HUD.
 
 <p align="center"><img src="docs/showcase/hud-preview.webp" alt="Holding cooked beef: the shanks and hearts it would restore flash on the HUD" width="720"></p>
 
@@ -51,7 +51,7 @@ Nothing to set up: start a survival or adventure world.
 
 ## Settings
 
-Everything is on by default. To change it, edit `mods/BeetrootSkin/config/config.json`; changes apply within a second, even while you play. The names are AppleSkin's.
+Everything is on by default. To change it, edit `mods/BeetrootSkin/config/config.json`; changes apply within a second, even while you play.
 
 | Option | Default | What it does |
 | --- | --- | --- |
@@ -66,7 +66,7 @@ Everything is on by default. To change it, edit `mods/BeetrootSkin/config/config
 | `maxHudOverlayFlashAlpha` | `0.65` | How strong the flashing previews get, from `0` to `1`. |
 | `showFoodDebugInfo` | `false` | The exact-numbers line (what `F6` toggles). |
 
-Bedrock heals differently from Java (a steady regeneration while hunger is 18 or more), so the health preview follows Bedrock's rules and can differ from AppleSkin on Java.
+Bedrock heals differently from Java (a steady regeneration while hunger is 18 or more), so the health preview follows Bedrock's rules and can differ from Java Edition.
 
 ## More
 
@@ -76,4 +76,4 @@ Building it yourself or writing a mod against it? See [CONTRIBUTING.md](CONTRIBU
 
 ## License
 
-[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest. The HUD and tooltip icons are AppleSkin's, by squeek502, released under the Unlicense ([NOTICE](assets/textures/NOTICE)). Not affiliated with Mojang Studios, Microsoft or the AppleSkin project.
+[LGPL-3.0-or-later](COPYING.LESSER) © MiracleForest. The HUD and tooltip icons are third-party, released under the Unlicense; see [NOTICE](assets/textures/NOTICE) for third-party notices. Not affiliated with Mojang Studios or Microsoft.
