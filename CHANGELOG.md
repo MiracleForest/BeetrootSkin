@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-21
+
+### Fixed
+
+- The client entries for LeviLamina 26.60 (the default variant and `26_60`) depend on `github.com/LiteLDev/LeviLamina` 26.60.8 or later instead of `github.com/LiteLDev/LeviLamina#client`. LeviLamina 26.60.8 is a lip.toml package with no `client` variant, so the old dependency could only resolve to LeviLamina 26.60.7 or earlier: a client install could not use the newest LeviLamina 26.60, and failed on a client that already had LeviLamina 26.60.8 installed.
+
 ## [0.1.0] - 2026-11-14
 
 First release.
@@ -40,5 +46,6 @@ First release.
   - headers and import library in `beetrootskin-sdk-client-win-x64-ll26.60.zip` and `beetrootskin-sdk-client-win-x64-ll26.51.zip`.
 - **Translations**: English and Simplified Chinese.
 
-[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/MiracleForest/BeetrootSkin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MiracleForest/BeetrootSkin/releases/tag/v0.1.0
